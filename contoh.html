@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Gathur Delano Kafka · with Secreto nav</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Gathur Delano Kafka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ----- base & reset ----- */
@@ -35,7 +35,7 @@
             color: inherit;
         }
 
-        /* ----- header card ----- */
+        /* ----- header card (no role line) ----- */
         header {
             background: #ffffff;
             border: 1px solid #e5e5e5;
@@ -104,18 +104,6 @@
             border-color: #1DA1F2;
         }
 
-        .profile-tagline {
-            font-size: 1.2rem;
-            color: #222;
-            background: #f6f6f6;
-            padding: 10px 24px;
-            border-radius: 60px;
-            border: 1px solid #eaeaea;
-            max-width: 90%;
-            margin-top: 4px;
-            font-weight: 480;
-        }
-
         /* ----- desktop layout ----- */
         @media (min-width: 860px) {
             body {
@@ -154,7 +142,7 @@
             }
         }
 
-        /* ----- navigation buttons (mobile first) ----- */
+        /* ----- navigation buttons (mobile friendly, no overflow) ----- */
         .navigation-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -165,8 +153,8 @@
         .nav-btn {
             background: #f8f8f8;
             border: 1px solid #dddddd;
-            border-radius: 24px;
-            padding: 14px 18px;
+            border-radius: 40px;           /* lebih bulat tapi proporsional */
+            padding: 12px 16px;
             font-weight: 550;
             font-size: 0.95rem;
             text-align: center;
@@ -177,6 +165,19 @@
             cursor: pointer;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
+        }
+
+        /* compact mobile override */
+        @media (max-width: 599px) {
+            .nav-btn {
+                padding: 10px 8px;
+                font-size: 0.82rem;
+                min-width: 70px;
+                flex: 1 1 auto;
+                white-space: normal;       /* biar wrap kalo sempit */
+                line-height: 1.2;
+            }
         }
 
         .nav-btn.active {
@@ -197,25 +198,25 @@
             transform: scale(0.96);
         }
 
-        /* secreto button spesial - beda warna */
-        .nav-btn.secreto-nav {
+        /* button khusus alterspring - tanpa kelas khusus biar sama */
+        .nav-btn.alterspring-nav {
             background: #e8e8e8;
             border-color: #999;
             color: #111;
             font-weight: 600;
         }
         
-        .nav-btn.secreto-nav i {
+        .nav-btn.alterspring-nav i {
             color: #d4a373;
         }
         
-        .nav-btn.secreto-nav:hover {
+        .nav-btn.alterspring-nav:hover {
             background: #d4a373;
             border-color: #b5835a;
             color: white;
         }
         
-        .nav-btn.secreto-nav:hover i {
+        .nav-btn.alterspring-nav:hover i {
             color: white;
         }
 
@@ -414,7 +415,7 @@
             color: #111;
         }
 
-        /* storyline, gallery, trivia, music */
+        /* storyline, gallery, trivia, music, voice */
         .storyline-content {
             background: #fafafa;
             padding: 28px;
@@ -456,7 +457,7 @@
             box-shadow: 0 14px 24px rgba(0,0,0,0.08);
         }
 
-        .trivia-item, .music-item {
+        .trivia-item, .music-item, .voice-item {
             background: #f9f9f9;
             border-radius: 24px;
             padding: 22px 24px;
@@ -465,7 +466,7 @@
             transition: 0.15s;
         }
 
-        .trivia-item:hover, .music-item:hover {
+        .trivia-item:hover, .music-item:hover, .voice-item:hover {
             background: #f2f2f2;
             transform: translateX(5px);
         }
@@ -484,14 +485,14 @@
             padding-left: 32px;
         }
 
-        .music-item {
+        .music-item, .voice-item {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 20px;
         }
 
-        .music-icon {
+        .music-icon, .voice-icon {
             width: 58px;
             height: 58px;
             background: #1DB954;
@@ -504,20 +505,24 @@
             flex-shrink: 0;
         }
 
-        .music-info {
+        .voice-icon {
+            background: #404040; /* warna netral beda dari music */
+        }
+
+        .music-info, .voice-info {
             flex: 2 1 200px;
         }
 
-        .music-title {
+        .music-title, .voice-title {
             font-weight: 700;
             font-size: 1.2rem;
         }
 
-        .music-artist {
+        .music-artist, .voice-artist {
             color: #505050;
         }
 
-        .music-link {
+        .music-link, .voice-link {
             background: #1DB954;
             color: white;
             padding: 10px 22px;
@@ -526,11 +531,37 @@
             white-space: nowrap;
             border: 1px solid #1DB954;
             transition: 0.2s;
+            cursor: pointer;
+            display: inline-block;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .voice-link {
+            background: #2c3e50; /* biru tua gelap */
+            border: 1px solid #2c3e50;
         }
 
         .music-link:hover {
             background: white;
             color: #1DB954;
+            border: 1px solid #1DB954;
+        }
+        .voice-link:hover {
+            background: white;
+            color: #2c3e50;
+            border: 1px solid #2c3e50;
+        }
+
+        /* audio player native small */
+        .voice-audio {
+            width: 100%;
+            margin-top: 12px;
+            display: none; /* hidden by default, muncul via js */
+        }
+        .voice-audio audio {
+            width: 100%;
+            border-radius: 30px;
         }
 
         footer {
@@ -541,14 +572,19 @@
             color: #5a5a5a;
         }
 
+        /* mobile additional spacing */
         @media (max-width: 600px) {
             header { padding: 24px 16px; }
             .profile-name { font-size: 1.8rem; }
             .profile-photo { width: 120px; height: 120px; }
             .section-title { font-size: 1.6rem; }
             .content-section { padding: 22px 18px; }
-            .nav-btn { padding: 12px 8px; font-size: 0.88rem; min-width: 85px; }
             .content-item-link { white-space: normal; }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -562,23 +598,23 @@
             <div class="profile-username">
                 <a href="https://x.com/@gaxlak" target="_blank"><i class="fab fa-x-twitter"></i> @gaxlak</a>
             </div>
-            <p class="profile-tagline">Writer & Publisher · Director of The Kachoo</p>
+            <!-- tagline yang berisi "Writer & Publisher · Director..." TELAH DIHAPUS -->
         </div>
     </header>
 
     <div class="main-container">
-        <!-- SIDEBAR NAVIGATION (8 buttons - including SECRETO) -->
+        <!-- SIDEBAR NAVIGATION (9 buttons including VOICE) -->
         <div class="sidebar">
             <div class="navigation-buttons">
-                <a href="#" class="nav-btn active" data-target="profile"><i class="fa-regular fa-user" style="margin-right: 8px;"></i> Profile</a>
-                <a href="#" class="nav-btn" data-target="achievement"><i class="fa-regular fa-star" style="margin-right: 8px;"></i> Achievements</a>
-                <a href="#" class="nav-btn" data-target="archive"><i class="fa-regular fa-book-open" style="margin-right: 8px;"></i> Books published</a>
-                <a href="#" class="nav-btn" data-target="storyline"><i class="fa-regular fa-compass" style="margin-right: 8px;"></i> Storyline</a>
-                <a href="#" class="nav-btn" data-target="gallery"><i class="fa-regular fa-images" style="margin-right: 8px;"></i> Gallery</a>
-                <a href="#" class="nav-btn" data-target="trivia"><i class="fa-regular fa-lightbulb" style="margin-right: 8px;"></i> Trivia</a>
-                <a href="#" class="nav-btn" data-target="music"><i class="fa-regular fa-music" style="margin-right: 8px;"></i> Favorites</a>
-                <!-- SECRETO BUTTON - sebagai tombol navigasi ke link eksternal -->
-                <a href="https://secreto.com/gaxlak" target="_blank" class="nav-btn secreto-nav"><i class="fas fa-lock" style="margin-right: 8px;"></i> Secreto message <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+                <a href="#" class="nav-btn active" data-target="profile"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Profile</a>
+                <a href="#" class="nav-btn" data-target="achievement"><i class="fa-regular fa-star" style="margin-right: 6px;"></i> Achievements</a>
+                <a href="#" class="nav-btn" data-target="archive"><i class="fa-regular fa-book-open" style="margin-right: 6px;"></i> Books published</a>
+                <a href="#" class="nav-btn" data-target="storyline"><i class="fa-regular fa-compass" style="margin-right: 6px;"></i> Storyline</a>
+                <a href="#" class="nav-btn" data-target="gallery"><i class="fa-regular fa-images" style="margin-right: 6px;"></i> Gallery</a>
+                <a href="#" class="nav-btn" data-target="trivia"><i class="fa-regular fa-lightbulb" style="margin-right: 6px;"></i> Trivia</a>
+                <a href="#" class="nav-btn" data-target="voice"><i class="fa-regular fa-message" style="margin-right: 6px;"></i> Voice</a>
+                <a href="#" class="nav-btn" data-target="music"><i class="fa-regular fa-music" style="margin-right: 6px;"></i> Favorites</a>
+                <a href="https://alterspring.org/@gathurdelano" target="_blank" class="nav-btn alterspring-nav">Anonymous Message</a>
             </div>
         </div>
 
@@ -595,11 +631,11 @@
                 </div>
             </section>
 
-            <!-- ACHIEVEMENT SECTION (10 items, no numbers, first line "The Best Graduate Oxford") -->
+            <!-- ACHIEVEMENT SECTION -->
             <section id="achievement" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-star"></i> Achievements</h2>
                 <div class="achievement-grid">
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div><div class="achievement-text"><div class="achievement-title">The Best Graduate Oxford</div><div class="achievement-desc">Program unggulan Philosophy, Politics, and Economics (PPE)</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div><div class="achievement-text"><div class="achievement-title">The Best Graduate Oxford</div><div class="achievement-desc">Flagship Program: Philosophy, Politics, and Economics (PPE)</div></div></div>
                     <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-diploma"></i></div><div class="achievement-text"><div class="achievement-title">Double Degree PPE & Computer Science</div><div class="achievement-desc">Oxford University</div></div></div>
                     <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-chart-line"></i></div><div class="achievement-text"><div class="achievement-title">Major MBA (Master of Business Administration)</div><div class="achievement-desc">Oxford</div></div></div>
                     <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-microchip"></i></div><div class="achievement-text"><div class="achievement-title">Creator of NeuroLink AI</div><div class="achievement-desc">Winner Global Quantum Code Summit</div></div></div>
@@ -612,7 +648,7 @@
                 </div>
             </section>
 
-            <!-- BOOKS PUBLISHED (Archive) -->
+            <!-- BOOKS PUBLISHED -->
             <section id="archive" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-book-open"></i> Books published</h2>
                 <ul class="content-list">
@@ -663,6 +699,55 @@
                 <div class="trivia-item"><div class="trivia-question"><i class="fas fa-heart"></i> Interests</div><div class="trivia-answer">Fascinated by conspiracies, enjoys analyzing human behavior, and loves exploring dark psychological themes in both reading and writing</div></div>
             </section>
 
+            <!-- VOICE SECTION (BARU) - 4 pemutar suara -->
+            <section id="voice" class="content-section">
+                <h2 class="section-title"><i class="fa-regular fa-message"></i> Voice</h2>
+                
+                <div class="voice-item" data-lang="english">
+                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
+                    <div class="voice-info">
+                        <div class="voice-title">English voice</div>
+                    </div>
+                    <button class="voice-link play-voice-btn">▶ Play</button>
+                    <div class="voice-audio" style="display: none; width: 100%; margin-top: 16px;">
+                        <audio controls preload="none" src="english.mp3">Your browser does not support audio.</audio>
+                    </div>
+                </div>
+
+                <div class="voice-item" data-lang="japanese">
+                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
+                    <div class="voice-info">
+                        <div class="voice-title">日本語 (Japanese)</div>
+                    </div>
+                    <button class="voice-link play-voice-btn">▶ Play</button>
+                    <div class="voice-audio" style="display: none; width: 100%; margin-top: 16px;">
+                        <audio controls preload="none" src="japan.mp3">Your browser does not support audio.</audio>
+                    </div>
+                </div>
+
+                <div class="voice-item" data-lang="german">
+                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
+                    <div class="voice-info">
+                        <div class="voice-title">Deutsch (German)</div>
+                    </div>
+                    <button class="voice-link play-voice-btn">▶ Play</button>
+                    <div class="voice-audio" style="display: none; width: 100%; margin-top: 16px;">
+                        <audio controls preload="none" src="german.mp3">Your browser does not support audio.</audio>
+                    </div>
+                </div>
+
+                <div class="voice-item" data-lang="french">
+                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
+                    <div class="voice-info">
+                        <div class="voice-title">Français (French)</div>
+                    </div>
+                    <button class="voice-link play-voice-btn">▶ Play</button>
+                    <div class="voice-audio" style="display: none; width: 100%; margin-top: 16px;">
+                        <audio controls preload="none" src="france.mp3">Your browser does not support audio.</audio>
+                    </div>
+                </div>
+            </section>
+
             <!-- MUSIC FAVORITES -->
             <section id="music" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-music"></i> Favorite Music</h2>
@@ -673,7 +758,7 @@
             </section>
 
             <footer>
-                <p>© 2026 Gathur Delano Kafka. All rights reserved.</p>
+                <p>© 2026 Gathur Delano Kafka.</p>
                 <p style="margin-top:10px; font-size:14px; color:#888;">Writer & Publisher | Director of The Kachoo</p>
             </footer>
         </div>
@@ -681,7 +766,7 @@
 
     <script>
         (function() {
-            const navBtns = document.querySelectorAll('.nav-btn:not(.secreto-nav)'); // secreto nav tidak ikut toggle
+            const navBtns = document.querySelectorAll('.nav-btn:not(.alterspring-nav)'); // alterspring tidak ikut toggle
             const sections = document.querySelectorAll('.content-section');
 
             function activateSection(targetId) {
@@ -707,14 +792,47 @@
                 });
             });
 
-            // secreto button tetap sebagai link eksternal, tidak terpengaruh nav
+            // default aktif profile
             activateSection('profile');
 
-            document.querySelectorAll('.nav-btn, .music-link, .content-item-link').forEach(el => {
+            // touch feedback
+            document.querySelectorAll('.nav-btn, .music-link, .content-item-link, .voice-link').forEach(el => {
                 el.addEventListener('touchstart', function() { this.style.transform = 'scale(0.96)'; });
                 el.addEventListener('touchend', function() { this.style.transform = ''; });
+            });
+
+            // VOICE section: play button munculkan audio player
+            document.querySelectorAll('.play-voice-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const voiceItem = this.closest('.voice-item');
+                    if (!voiceItem) return;
+                    const audioDiv = voiceItem.querySelector('.voice-audio');
+                    if (!audioDiv) return;
+                    
+                    // sembunyikan yang lain? biar ga rame, tutup semua audio di voice section
+                    document.querySelectorAll('#voice .voice-audio').forEach(ad => {
+                        if (ad !== audioDiv) {
+                            ad.style.display = 'none';
+                            const player = ad.querySelector('audio');
+                            if (player) player.pause();
+                        }
+                    });
+
+                    // toggle audio div
+                    if (audioDiv.style.display === 'none' || audioDiv.style.display === '') {
+                        audioDiv.style.display = 'block';
+                        this.textContent = '⏸ Pause';
+                        // auto play? biar user klik play di control
+                    } else {
+                        audioDiv.style.display = 'none';
+                        this.textContent = '▶ Play';
+                        const audio = audioDiv.querySelector('audio');
+                        if (audio) audio.pause();
+                    }
+                });
             });
         })();
     </script>
 </body>
-</html>
+                    </html>
