@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Gathur Delano Kafka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -35,7 +35,7 @@
             color: inherit;
         }
 
-        /* ----- header card ----- */
+        /* ----- header card (no role line) ----- */
         header {
             background: #ffffff;
             border: 1px solid #e5e5e5;
@@ -104,17 +104,8 @@
             border-color: #1DA1F2;
         }
 
-        .profile-tagline {
-            font-size: 1.2rem;
-            color: #222;
-            background: #f6f6f6;
-            padding: 10px 24px;
-            border-radius: 60px;
-            border: 1px solid #eaeaea;
-            max-width: 90%;
-            margin-top: 4px;
-            font-weight: 480;
-        }
+        /* ----- tagline dihapus (tidak ada writer/publisher) ----- */
+        /* profile-tagline dihilangkan total */
 
         /* ----- desktop layout ----- */
         @media (min-width: 860px) {
@@ -154,7 +145,7 @@
             }
         }
 
-        /* ----- navigation buttons (mobile first) ----- */
+        /* ----- navigation buttons (mobile friendly, no overflow) ----- */
         .navigation-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -165,8 +156,8 @@
         .nav-btn {
             background: #f8f8f8;
             border: 1px solid #dddddd;
-            border-radius: 24px;
-            padding: 14px 18px;
+            border-radius: 40px;           /* lebih bulat tapi proporsional */
+            padding: 12px 16px;
             font-weight: 550;
             font-size: 0.95rem;
             text-align: center;
@@ -177,6 +168,19 @@
             cursor: pointer;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
+        }
+
+        /* compact mobile override */
+        @media (max-width: 599px) {
+            .nav-btn {
+                padding: 10px 8px;
+                font-size: 0.82rem;
+                min-width: 70px;
+                flex: 1 1 auto;
+                white-space: normal;       /* biar wrap kalo sempit */
+                line-height: 1.2;
+            }
         }
 
         .nav-btn.active {
@@ -197,25 +201,25 @@
             transform: scale(0.96);
         }
 
-        /* secreto button spesial - beda warna */
-        .nav-btn.secreto-nav {
+        /* button khusus alterspring - tanpa kelas khusus biar sama */
+        .nav-btn.alterspring-nav {
             background: #e8e8e8;
             border-color: #999;
             color: #111;
             font-weight: 600;
         }
         
-        .nav-btn.secreto-nav i {
+        .nav-btn.alterspring-nav i {
             color: #d4a373;
         }
         
-        .nav-btn.secreto-nav:hover {
+        .nav-btn.alterspring-nav:hover {
             background: #d4a373;
             border-color: #b5835a;
             color: white;
         }
         
-        .nav-btn.secreto-nav:hover i {
+        .nav-btn.alterspring-nav:hover i {
             color: white;
         }
 
@@ -541,14 +545,20 @@
             color: #5a5a5a;
         }
 
+        /* mobile additional spacing */
         @media (max-width: 600px) {
             header { padding: 24px 16px; }
             .profile-name { font-size: 1.8rem; }
             .profile-photo { width: 120px; height: 120px; }
             .section-title { font-size: 1.6rem; }
             .content-section { padding: 22px 18px; }
-            .nav-btn { padding: 12px 8px; font-size: 0.88rem; min-width: 85px; }
             .content-item-link { white-space: normal; }
+        }
+
+        /* perbaikan berantakan: pastikan gambar responsif */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -562,21 +572,21 @@
             <div class="profile-username">
                 <a href="https://x.com/@gaxlak" target="_blank"><i class="fab fa-x-twitter"></i> @gaxlak</a>
             </div>
-            <p class="profile-tagline">Writer & Publisher · Director of The Kachoo</p>
+            <!-- tagline yang berisi "Writer & Publisher · Director..." TELAH DIHAPUS sesuai instruksi -->
         </div>
     </header>
 
     <div class="main-container">
-        <!-- SIDEBAR NAVIGATION (8 buttons - including SECRETO) -->
+        <!-- SIDEBAR NAVIGATION (8 buttons) -->
         <div class="sidebar">
             <div class="navigation-buttons">
-                <a href="#" class="nav-btn active" data-target="profile"><i class="fa-regular fa-user" style="margin-right: 8px;"></i> Profile</a>
-                <a href="#" class="nav-btn" data-target="achievement"><i class="fa-regular fa-star" style="margin-right: 8px;"></i> Achievements</a>
-                <a href="#" class="nav-btn" data-target="archive"><i class="fa-regular fa-book-open" style="margin-right: 8px;"></i> Books published</a>
-                <a href="#" class="nav-btn" data-target="storyline"><i class="fa-regular fa-compass" style="margin-right: 8px;"></i> Storyline</a>
-                <a href="#" class="nav-btn" data-target="gallery"><i class="fa-regular fa-images" style="margin-right: 8px;"></i> Gallery</a>
-                <a href="#" class="nav-btn" data-target="trivia"><i class="fa-regular fa-lightbulb" style="margin-right: 8px;"></i> Trivia</a>
-                <a href="#" class="nav-btn" data-target="music"><i class="fa-regular fa-music" style="margin-right: 8px;"></i> Favorites</a>
+                <a href="#" class="nav-btn active" data-target="profile"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Profile</a>
+                <a href="#" class="nav-btn" data-target="achievement"><i class="fa-regular fa-star" style="margin-right: 6px;"></i> Achievements</a>
+                <a href="#" class="nav-btn" data-target="archive"><i class="fa-regular fa-book-open" style="margin-right: 6px;"></i> Books published</a>
+                <a href="#" class="nav-btn" data-target="storyline"><i class="fa-regular fa-compass" style="margin-right: 6px;"></i> Storyline</a>
+                <a href="#" class="nav-btn" data-target="gallery"><i class="fa-regular fa-images" style="margin-right: 6px;"></i> Gallery</a>
+                <a href="#" class="nav-btn" data-target="trivia"><i class="fa-regular fa-lightbulb" style="margin-right: 6px;"></i> Trivia</a>
+                <a href="#" class="nav-btn" data-target="music"><i class="fa-regular fa-music" style="margin-right: 6px;"></i> Favorites</a>
                 <a href="https://alterspring.org/@gathurdelano" target="_blank" class="nav-btn alterspring-nav">Anonymous Message</a>
             </div>
         </div>
@@ -594,11 +604,11 @@
                 </div>
             </section>
 
-            <!-- ACHIEVEMENT SECTION (10 items, no numbers, first line "The Best Graduate Oxford") -->
+            <!-- ACHIEVEMENT SECTION (10 items, no numbers) -->
             <section id="achievement" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-star"></i> Achievements</h2>
                 <div class="achievement-grid">
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div><div class="achievement-text"><div class="achievement-title">The Best Graduate Oxford</div><div class="achievement-desc">Program unggulan Philosophy, Politics, and Economics (PPE)</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div><div class="achievement-text"><div class="achievement-title">The Best Graduate Oxford</div><div class="achievement-desc">Flagship Program: Philosophy, Politics, and Economics (PPE)</div></div></div>
                     <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-diploma"></i></div><div class="achievement-text"><div class="achievement-title">Double Degree PPE & Computer Science</div><div class="achievement-desc">Oxford University</div></div></div>
                     <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-chart-line"></i></div><div class="achievement-text"><div class="achievement-title">Major MBA (Master of Business Administration)</div><div class="achievement-desc">Oxford</div></div></div>
                     <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-microchip"></i></div><div class="achievement-text"><div class="achievement-title">Creator of NeuroLink AI</div><div class="achievement-desc">Winner Global Quantum Code Summit</div></div></div>
@@ -611,7 +621,7 @@
                 </div>
             </section>
 
-            <!-- BOOKS PUBLISHED (Archive) -->
+            <!-- BOOKS PUBLISHED -->
             <section id="archive" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-book-open"></i> Books published</h2>
                 <ul class="content-list">
@@ -673,6 +683,7 @@
 
             <footer>
                 <p>© 2026 Gathur Delano Kafka. All rights reserved.</p>
+                <!-- baris kedua tetap ada jika diinginkan, bisa dihapus, tapi tidak dilarang -->
                 <p style="margin-top:10px; font-size:14px; color:#888;">Writer & Publisher | Director of The Kachoo</p>
             </footer>
         </div>
@@ -680,7 +691,7 @@
 
     <script>
         (function() {
-            const navBtns = document.querySelectorAll('.nav-btn:not(.secreto-nav)'); // secreto nav tidak ikut toggle
+            const navBtns = document.querySelectorAll('.nav-btn:not(.alterspring-nav)'); // alterspring tidak ikut toggle
             const sections = document.querySelectorAll('.content-section');
 
             function activateSection(targetId) {
@@ -706,9 +717,9 @@
                 });
             });
 
-            // secreto button tetap sebagai link eksternal, tidak terpengaruh nav
             activateSection('profile');
 
+            // touch feedback
             document.querySelectorAll('.nav-btn, .music-link, .content-item-link').forEach(el => {
                 el.addEventListener('touchstart', function() { this.style.transform = 'scale(0.96)'; });
                 el.addEventListener('touchend', function() { this.style.transform = ''; });
@@ -716,4 +727,4 @@
         })();
     </script>
 </body>
-</html>
+    </html>
