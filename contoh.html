@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Gathur Delano Kafka </title>
+    <title>Gathur Delano Kafka · refined</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ----- base & reset ----- */
@@ -243,7 +243,7 @@
             color: #222;
         }
 
-        /* ----- achievement grid (10 items) + bio mix ----- */
+        /* ----- achievement grid (10 items, no numbers) ----- */
         .achievement-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -327,7 +327,7 @@
             color: #505050;
         }
 
-        /* ----- books published (replacing archive) ----- */
+        /* ----- books published (archive) ----- */
         .content-list {
             list-style: none;
         }
@@ -392,10 +392,12 @@
             color: #111;
         }
 
-        /* ----- external secreto button (special) ----- */
-        .external-secreto {
-            margin: 40px 0 20px;
+        /* ----- external secreto button (now used as inline after favorites) ----- */
+        .secreto-inline {
+            margin-top: 40px;
             text-align: center;
+            border-top: 2px dashed #ddd;
+            padding-top: 30px;
         }
 
         .secreto-btn {
@@ -405,14 +407,14 @@
             align-items: center;
             justify-content: center;
             gap: 16px;
-            padding: 20px 40px;
+            padding: 18px 42px;
             border-radius: 60px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 620;
             border: 2px solid #111;
             transition: all 0.25s;
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
             margin: 0 auto;
             box-shadow: 0 8px 16px rgba(0,0,0,0.05);
         }
@@ -428,7 +430,7 @@
             box-shadow: 0 14px 28px rgba(0,0,0,0.1);
         }
 
-        /* storyline, gallery, trivia, music (unchanged style but kept) */
+        /* storyline, gallery, trivia, music */
         .storyline-content {
             background: #fafafa;
             padding: 28px;
@@ -593,72 +595,40 @@
                 <a href="#" class="nav-btn" data-target="trivia"><i class="fa-regular fa-lightbulb" style="margin-right: 8px;"></i> Trivia</a>
                 <a href="#" class="nav-btn" data-target="music"><i class="fa-regular fa-music" style="margin-right: 8px;"></i> Favorites</a>
             </div>
-            <!-- optional small hint (secreto button is inside main content area) -->
         </div>
 
-        <!-- CONTENT PANELS (full) -->
+        <!-- CONTENT PANELS -->
         <div class="content-area">
-            <!-- PROFILE SECTION (basic info, no changes) -->
+            <!-- PROFILE SECTION -->
             <section id="profile" class="content-section active">
                 <h2 class="section-title"><i class="fa-regular fa-user"></i> About me</h2>
                 <div class="bio-details">
-                    <div class="bio-item">
-                        <div class="bio-icon"><i class="fas fa-book"></i></div>
-                        <div class="bio-text">
-                            <div class="bio-title">Writer & Book Publisher</div>
-                            <div class="bio-description">Expert in dark themes, politics, and thriller narratives</div>
-                        </div>
-                    </div>
-                    <div class="bio-item">
-                        <div class="bio-icon"><i class="fas fa-briefcase"></i></div>
-                        <div class="bio-text">
-                            <div class="bio-title">Director of The Kachoo</div>
-                            <div class="bio-description">South Jakarta, Indonesia</div>
-                        </div>
-                    </div>
-                    <div class="bio-item">
-                        <div class="bio-icon"><i class="fas fa-birthday-cake"></i></div>
-                        <div class="bio-text">
-                            <div class="bio-title">Born 1992</div>
-                            <div class="bio-description">34 years old (in 2026)</div>
-                        </div>
-                    </div>
-                    <div class="bio-item">
-                        <div class="bio-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="bio-text">
-                            <div class="bio-title">London, England</div>
-                            <div class="bio-description">Born and raised in London</div>
-                        </div>
-                    </div>
+                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-book"></i></div><div class="bio-text"><div class="bio-title">Writer & Book Publisher</div><div class="bio-description">Expert in dark themes, politics, and thriller narratives</div></div></div>
+                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-briefcase"></i></div><div class="bio-text"><div class="bio-title">Director of The Kachoo</div><div class="bio-description">South Jakarta, Indonesia</div></div></div>
+                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-birthday-cake"></i></div><div class="bio-text"><div class="bio-title">Born 1992</div><div class="bio-description">34 years old (in 2026)</div></div></div>
+                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-map-marker-alt"></i></div><div class="bio-text"><div class="bio-title">London, England</div><div class="bio-description">Born and raised in London</div></div></div>
                 </div>
-                <!-- external secreto button placed also in profile, but will be visible in many sections (request: satu tombol mengarah ke link luar) we add it here distinctly -->
-                <div class="external-secreto">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message <i class="fas fa-arrow-up-right-from-square"></i></a>
-                </div>
+                <!-- Secreto button not repeated here, only after Favorites -->
             </section>
 
-            <!-- ACHIEVEMENT SECTION (10 items exactly) -->
+            <!-- ACHIEVEMENT SECTION (10 items, no numbers, first line changed to "The Best Graduate Oxford") -->
             <section id="achievement" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-star"></i> Achievements</h2>
                 <div class="achievement-grid">
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div><div class="achievement-text"><div class="achievement-title">1. Lulusan Terbaik Oxford (PPE)</div><div class="achievement-desc">Program unggulan Philosophy, Politics, and Economics</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-diploma"></i></div><div class="achievement-text"><div class="achievement-title">2. Double Degree PPE & Computer Science</div><div class="achievement-desc">Oxford University</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-chart-line"></i></div><div class="achievement-text"><div class="achievement-title">3. Major MBA (Master of Business Administration)</div><div class="achievement-desc">Oxford</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-microchip"></i></div><div class="achievement-text"><div class="achievement-title">4. Creator of NeuroLink AI</div><div class="achievement-desc">Winner Global Quantum Code Summit</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-shield-halved"></i></div><div class="achievement-text"><div class="achievement-title">5. Creator of ShadowMind Protocol</div><div class="achievement-desc">Winner International Cyber Intelligence Arena</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-box"></i></div><div class="achievement-text"><div class="achievement-title">6. Developer of Sentinel Blackbox</div><div class="achievement-desc">Adopted by intelligence agencies worldwide</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-vault"></i></div><div class="achievement-text"><div class="achievement-title">7. Developer of Vaultx Protocol</div><div class="achievement-desc">Adopted by CHOBANK system</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-pen-fancy"></i></div><div class="achievement-text"><div class="achievement-title">8. Author of The Man Behind Delanosa & The Madman: Malvier</div><div class="achievement-desc">Int’l bestselling thrillers, Global Fiction Awards</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-building"></i></div><div class="achievement-text"><div class="achievement-title">9. Major Shareholder & second heir of Kafka Company</div><div class="achievement-desc"></div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-crown"></i></div><div class="achievement-text"><div class="achievement-title">10. Chief Executive Officer of The Kachoo</div><div class="achievement-desc"></div></div></div>
-                </div>
-                <!-- secreto button also here (biar ada di beberapa tempat) -->
-                <div class="external-secreto">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div><div class="achievement-text"><div class="achievement-title">The Best Graduate Oxford</div><div class="achievement-desc">Program unggulan Philosophy, Politics, and Economics (PPE)</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-diploma"></i></div><div class="achievement-text"><div class="achievement-title">Double Degree PPE & Computer Science</div><div class="achievement-desc">Oxford University</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-chart-line"></i></div><div class="achievement-text"><div class="achievement-title">Major MBA (Master of Business Administration)</div><div class="achievement-desc">Oxford</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-microchip"></i></div><div class="achievement-text"><div class="achievement-title">Creator of NeuroLink AI</div><div class="achievement-desc">Winner Global Quantum Code Summit</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-shield-halved"></i></div><div class="achievement-text"><div class="achievement-title">Creator of ShadowMind Protocol</div><div class="achievement-desc">Winner International Cyber Intelligence Arena</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-box"></i></div><div class="achievement-text"><div class="achievement-title">Developer of Sentinel Blackbox</div><div class="achievement-desc">Adopted by intelligence agencies worldwide</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-vault"></i></div><div class="achievement-text"><div class="achievement-title">Developer of Vaultx Protocol</div><div class="achievement-desc">Adopted by CHOBANK system</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-pen-fancy"></i></div><div class="achievement-text"><div class="achievement-title">Author of The Man Behind Delanosa and The Madman: Malvier</div><div class="achievement-desc">International bestselling thrillers, Global Fiction Awards</div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-building"></i></div><div class="achievement-text"><div class="achievement-title">Major Shareholder and second heir of Kafka Company</div><div class="achievement-desc"></div></div></div>
+                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-crown"></i></div><div class="achievement-text"><div class="achievement-title">Chief Executive Officer of The Kachoo</div><div class="achievement-desc"></div></div></div>
                 </div>
             </section>
 
-            <!-- ARCHIVE (renamed: Books published) -->
+            <!-- BOOKS PUBLISHED (Archive) -->
             <section id="archive" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-book-open"></i> Books published</h2>
                 <ul class="content-list">
@@ -667,19 +637,16 @@
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Hidden Story Vol.1</div><div class="content-item-type">Psychological Thriller Novel</div><div class="content-item-year">2025</div></div></li>
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Last Order : Rowan</div><div class="content-item-type">Psychological Thriller Novel</div><div class="content-item-year">2026</div></div></li>
                 </ul>
-                <h3 class="section-title" style="font-size: 1.5rem; border-bottom: none; margin: 30px 0 20px;"><i class="fas fa-pen-fancy"></i> Short Stories</h3>
+                <h3 style="font-size:1.5rem; margin:30px 0 20px; display:flex; gap:8px;"><i class="fas fa-pen-fancy"></i> Short Stories</h3>
                 <ul class="content-list">
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Scandalous</div><div class="content-item-type">Thriller Short Story</div></div><a href="https://x.com/i/status/1997873274479681599" class="content-item-link" target="_blank">Read</a></li>
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">Retak : Perdebatan Malam Itu</div><div class="content-item-type">Family Drama</div></div><a href="https://x.com/i/status/2000169761188278714" class="content-item-link" target="_blank">Read</a></li>
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">High by the Beach feat Cindy Lou</div><div class="content-item-type">Toxic Relationship</div></div><a href="https://x.com/i/status/1999453298886344899" class="content-item-link" target="_blank">Read</a></li>
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">Blind Date Kok Sama Mantan?!</div><div class="content-item-type">Comedy & Romance</div></div><a href="https://x.com/i/status/1999881119840481467" class="content-item-link" target="_blank">Read</a></li>
                 </ul>
-                <div class="external-secreto">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message <i class="fas fa-arrow-up-right-from-square"></i></a>
-                </div>
             </section>
 
-            <!-- STORYLINE SECTION (unchanged) -->
+            <!-- STORYLINE -->
             <section id="storyline" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-compass"></i> Storyline</h2>
                 <div class="storyline-content">
@@ -688,13 +655,9 @@
                     <p>Inside the story, Gathur is stripped of his role as an author and forced to exist as part of the plot. The characters he once created now possess their own will, some treating him as a myth, others sensing him as a threat. The rules of the thriller govern everything, where secrets demand to be uncovered and mistakes are punished without mercy. His ability to understand multiple languages becomes his greatest weapon. Through scattered texts, coded warnings, and conversations that shift from one language to another, Gathur uncovers hidden layers of the narrative that only he can perceive. Each language reveals a different truth, guiding him deeper into the heart of the story and closer to the fears he tried to conceal through fiction.</p>
                     <p>As reality and fiction blur, Gathur is forced to confront the darkness embedded within his own writing. The story reflects his regrets, obsessions, and moral dilemmas, turning them into tangible threats. To escape, he must do the impossible by completing the story from within, not by writing words, but by making irreversible choices that shape its ending. Whether he will awaken from his critical state or remain forever imprisoned inside the thriller he created is uncertain, as the story continues to close in around him, demanding a conclusion that only he can deliver.</p>
                 </div>
-                <!-- secreto button -->
-                <div class="external-secreto">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message</a>
-                </div>
             </section>
 
-            <!-- GALLERY (unchanged) -->
+            <!-- GALLERY -->
             <section id="gallery" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-images"></i> Gallery</h2>
                 <div class="gallery-grid">
@@ -705,32 +668,28 @@
                     <div class="gallery-item" style="background-image: url('grid5.png')"></div>
                     <div class="gallery-item" style="background-image: url('grid6.png')"></div>
                 </div>
-                <div class="external-secreto">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message</a>
-                </div>
             </section>
 
-            <!-- TRIVIA (unchanged) -->
+            <!-- TRIVIA -->
             <section id="trivia" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-lightbulb"></i> Trivia</h2>
                 <div class="trivia-item"><div class="trivia-question"><i class="fas fa-book"></i> Favorite Writing Genre</div><div class="trivia-answer">Thriller - especially psychological and political thrillers with dark themes</div></div>
                 <div class="trivia-item"><div class="trivia-question"><i class="fas fa-film"></i> Favorite Films & Series</div><div class="trivia-answer">Alice in Borderland, Shutter Island, The Cabin in the Woods, Attack on Titan, Jujutsu Kaisen, Monster (Anime series), and other psychological thrillers</div></div>
                 <div class="trivia-item"><div class="trivia-question"><i class="fas fa-user"></i> Personality Traits</div><div class="trivia-answer">Workaholic and smoker. Has long, large fingers and intense eyes. Tends to stare at new people who intrigue him - the gaze can be unsettling as he seems to dissect someone just by looking at them</div></div>
                 <div class="trivia-item"><div class="trivia-question"><i class="fas fa-heart"></i> Interests</div><div class="trivia-answer">Fascinated by conspiracies, enjoys analyzing human behavior, and loves exploring dark psychological themes in both reading and writing</div></div>
-                <div class="external-secreto">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message</a>
-                </div>
             </section>
 
-            <!-- MUSIC FAVORITES (unchanged but with secreto) -->
+            <!-- MUSIC FAVORITES (with secreto button AFTER the last music item, not below the whole section) -->
             <section id="music" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-music"></i> Favorite Music</h2>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Under the Influence</div><div class="music-artist">Chris Brown</div></div><a href="https://open.spotify.com/track/5IgjP7X4th6nMNDh4akUHb?si=19594b3665574834" class="music-link" target="_blank">Listen</a></div>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Swimming Pools</div><div class="music-artist">Kendrick Lamar (Cover by Lloyd)</div></div><a href="https://open.spotify.com/track/0qBh4HDd6UrJ7jxzPojRYJ?si=db8287e03cdd4998" class="music-link" target="_blank">Listen</a></div>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Timeless</div><div class="music-artist">The Weeknd feat Playboi Carti</div></div><a href="https://open.spotify.com/track/0FIDCNYYjNvPVimz5icugS?si=e414e30384584e49" class="music-link" target="_blank">Listen</a></div>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Reflections</div><div class="music-artist">The Neighbourhood</div></div><a href="https://open.spotify.com/track/2xql0pid3EUwW38AsywxhV?si=fab1a7462cce4fe9" class="music-link" target="_blank">Listen</a></div>
-                <div class="external-secreto">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message</a>
+
+                <!-- SECRETO BUTTON : tepat setelah daftar favorite (masih di dalam section music, setelah item keempat) -->
+                <div class="secreto-inline">
+                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message <i class="fas fa-arrow-up-right-from-square"></i></a>
                 </div>
             </section>
 
@@ -743,7 +702,6 @@
 
     <script>
         (function() {
-            // navigation
             const navBtns = document.querySelectorAll('.nav-btn');
             const sections = document.querySelectorAll('.content-section');
 
@@ -770,10 +728,8 @@
                 });
             });
 
-            // ensure first active
             activateSection('profile');
 
-            // tiny hover touch
             document.querySelectorAll('.nav-btn, .music-link, .content-item-link, .secreto-btn').forEach(el => {
                 el.addEventListener('touchstart', function() { this.style.transform = 'scale(0.96)'; });
                 el.addEventListener('touchend', function() { this.style.transform = ''; });
