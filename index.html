@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Gathur Delano Kafka</title>
+    <!-- FONT AWESOME TETAP ADA TAPI TIDAK DIGUNAKAN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ----- base & reset ----- */
@@ -35,7 +36,7 @@
             color: inherit;
         }
 
-        /* ----- header card (no role line) ----- */
+        /* ----- header card ----- */
         header {
             background: #ffffff;
             border: 1px solid #e5e5e5;
@@ -142,7 +143,7 @@
             }
         }
 
-        /* ----- navigation buttons (mobile friendly, no overflow) ----- */
+        /* ----- navigation buttons (TANPA ICON) ----- */
         .navigation-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -153,7 +154,7 @@
         .nav-btn {
             background: #f8f8f8;
             border: 1px solid #dddddd;
-            border-radius: 40px;           /* lebih bulat tapi proporsional */
+            border-radius: 40px;
             padding: 12px 16px;
             font-weight: 550;
             font-size: 0.95rem;
@@ -168,14 +169,13 @@
             white-space: nowrap;
         }
 
-        /* compact mobile override */
         @media (max-width: 599px) {
             .nav-btn {
                 padding: 10px 8px;
                 font-size: 0.82rem;
                 min-width: 70px;
                 flex: 1 1 auto;
-                white-space: normal;       /* biar wrap kalo sempit */
+                white-space: normal;
                 line-height: 1.2;
             }
         }
@@ -198,7 +198,6 @@
             transform: scale(0.96);
         }
 
-        /* button khusus alterspring - tanpa kelas khusus biar sama */
         .nav-btn.alterspring-nav {
             background: #e8e8e8;
             border-color: #999;
@@ -206,17 +205,9 @@
             font-weight: 600;
         }
         
-        .nav-btn.alterspring-nav i {
-            color: #d4a373;
-        }
-        
         .nav-btn.alterspring-nav:hover {
             background: #d4a373;
             border-color: #b5835a;
-            color: white;
-        }
-        
-        .nav-btn.alterspring-nav:hover i {
             color: white;
         }
 
@@ -254,19 +245,11 @@
             font-size: 1.9rem;
             font-weight: 650;
             margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
             padding-bottom: 16px;
             border-bottom: 2px solid #ececec;
         }
 
-        .section-title i {
-            font-size: 1.7rem;
-            color: #222;
-        }
-
-        /* ----- achievement grid (10 items, no numbers) ----- */
+        /* ----- achievement grid ----- */
         .achievement-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -284,9 +267,6 @@
             border: 1px solid #efefef;
             border-radius: 24px;
             padding: 22px 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 18px;
             transition: all 0.2s;
         }
 
@@ -294,16 +274,6 @@
             background: #f2f2f2;
             transform: translateX(6px);
             border-color: #ccc;
-        }
-
-        .achievement-icon {
-            font-size: 1.8rem;
-            min-width: 44px;
-            color: #1e1e1e;
-        }
-
-        .achievement-text {
-            flex: 1;
         }
 
         .achievement-title {
@@ -318,7 +288,7 @@
             font-size: 0.94rem;
         }
 
-        /* bio details (smaller) */
+        /* bio details */
         .bio-details {
             display: grid;
             grid-template-columns: 1fr;
@@ -331,14 +301,6 @@
             border: 1px solid #efefef;
             border-radius: 20px;
             padding: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .bio-icon {
-            font-size: 1.5rem;
-            min-width: 36px;
         }
 
         .bio-title {
@@ -350,7 +312,7 @@
             color: #505050;
         }
 
-        /* ----- books published (archive) ----- */
+        /* books published */
         .content-list {
             list-style: none;
         }
@@ -415,7 +377,7 @@
             color: #111;
         }
 
-        /* storyline, gallery, trivia, music, voice */
+        /* storyline */
         .storyline-content {
             background: #fafafa;
             padding: 28px;
@@ -430,6 +392,7 @@
             border-left: 4px solid #aaa;
         }
 
+        /* gallery */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -457,6 +420,7 @@
             box-shadow: 0 14px 24px rgba(0,0,0,0.08);
         }
 
+        /* trivia, music, voice */
         .trivia-item, .music-item, .voice-item {
             background: #f9f9f9;
             border-radius: 24px;
@@ -474,9 +438,6 @@
         .trivia-question {
             font-weight: 700;
             font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
             margin-bottom: 8px;
         }
 
@@ -492,21 +453,9 @@
             gap: 20px;
         }
 
+        /* SEMUA ICON DIHAPUS - bagian ini dikosongkan */
         .music-icon, .voice-icon {
-            width: 58px;
-            height: 58px;
-            background: #1DB954;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .voice-icon {
-            background: #404040; /* warna netral beda dari music */
+            display: none; /* icon disembunyikan */
         }
 
         .music-info, .voice-info {
@@ -537,16 +486,13 @@
             font-size: 0.95rem;
         }
 
-        /* PERUBAHAN: tombol voice hitam polos, tanpa ikon/emoji */
+        /* tombol voice hitam polos */
         .voice-link {
-            background: #111111;        /* hitam solid */
+            background: #111111;
             border: 1px solid #111111;
             color: white;
-            min-width: 90px;            /* lebar cukup untuk Play/Pause */
+            min-width: 90px;
             text-align: center;
-        }
-        .voice-link.pause-state {
-            background: #222222;
         }
 
         .music-link:hover {
@@ -555,16 +501,15 @@
             border: 1px solid #1DB954;
         }
         .voice-link:hover {
-            background: #333333;        /* abu tua saat hover */
+            background: #333333;
             color: white;
             border: 1px solid #333333;
         }
 
-        /* audio player native small */
         .voice-audio {
             width: 100%;
             margin-top: 12px;
-            display: none; /* hidden by default, muncul via js */
+            display: none;
         }
         .voice-audio audio {
             width: 100%;
@@ -579,7 +524,6 @@
             color: #5a5a5a;
         }
 
-        /* mobile additional spacing */
         @media (max-width: 600px) {
             header { padding: 24px 16px; }
             .profile-name { font-size: 1.8rem; }
@@ -603,24 +547,23 @@
             </div>
             <h1 class="profile-name">Gathur Delano Kafka</h1>
             <div class="profile-username">
-                <a href="https://x.com/@gaxlak" target="_blank"><i class="fab fa-x-twitter"></i> @gaxlak</a>
+                <a href="https://x.com/@gaxlak" target="_blank">@gaxlak</a>
             </div>
-            <!-- tagline yang berisi "Writer & Publisher · Director ..." TELAH DIHAPUS -->
         </div>
     </header>
 
     <div class="main-container">
-        <!-- SIDEBAR NAVIGATION (9 buttons including VOICE) -->
+        <!-- SIDEBAR NAVIGASI - TANPA ICON -->
         <div class="sidebar">
             <div class="navigation-buttons">
-                <a href="#" class="nav-btn active" data-target="profile"><i class="fa-regular fa-user" style="margin-right: 6px;"></i> Profile</a>
-                <a href="#" class="nav-btn" data-target="achievement"><i class="fa-regular fa-star" style="margin-right: 6px;"></i> Achievements</a>
-                <a href="#" class="nav-btn" data-target="archive"><i class="fa-regular fa-book-open" style="margin-right: 6px;"></i> Books published</a>
-                <a href="#" class="nav-btn" data-target="storyline"><i class="fa-regular fa-compass" style="margin-right: 6px;"></i> Storyline</a>
-                <a href="#" class="nav-btn" data-target="gallery"><i class="fa-regular fa-images" style="margin-right: 6px;"></i> Gallery</a>
-                <a href="#" class="nav-btn" data-target="trivia"><i class="fa-regular fa-lightbulb" style="margin-right: 6px;"></i> Trivia</a>
-                <a href="#" class="nav-btn" data-target="voice"><i class="fa-regular fa-message" style="margin-right: 6px;"></i> Voice</a>
-                <a href="#" class="nav-btn" data-target="music"><i class="fa-regular fa-music" style="margin-right: 6px;"></i> Favorites</a>
+                <a href="#" class="nav-btn active" data-target="profile">Profile</a>
+                <a href="#" class="nav-btn" data-target="achievement">Achievements</a>
+                <a href="#" class="nav-btn" data-target="archive">Books published</a>
+                <a href="#" class="nav-btn" data-target="storyline">Storyline</a>
+                <a href="#" class="nav-btn" data-target="gallery">Gallery</a>
+                <a href="#" class="nav-btn" data-target="trivia">Trivia</a>
+                <a href="#" class="nav-btn" data-target="voice">Voice</a>
+                <a href="#" class="nav-btn" data-target="music">Favorites</a>
                 <a href="https://alterspring.org/@gathurdelano" target="_blank" class="nav-btn alterspring-nav">Anonymous Message</a>
             </div>
         </div>
@@ -629,47 +572,45 @@
         <div class="content-area">
             <!-- PROFILE SECTION -->
             <section id="profile" class="content-section active">
-                <h2 class="section-title"><i class="fa-regular fa-user"></i> About me</h2>
+                <h2 class="section-title">About me</h2>
                 <div class="bio-details">
-                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-book"></i></div><div class="bio-text"><div class="bio-title">Writer & Book Publisher</div><div class="bio-description">Expert in dark themes, politics, and thriller narratives</div></div></div>
-                    <!-- PERUBAHAN: Director -> Chief Executive Officer -->
-                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-briefcase"></i></div><div class="bio-text"><div class="bio-title">Chief Executive Officer of The Kachoo</div><div class="bio-description">South Jakarta, Indonesia</div></div></div>
-                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-birthday-cake"></i></div><div class="bio-text"><div class="bio-title">Born 1992</div><div class="bio-description">34 years old (in 2026)</div></div></div>
-                    <div class="bio-item"><div class="bio-icon"><i class="fas fa-map-marker-alt"></i></div><div class="bio-text"><div class="bio-title">London, England</div><div class="bio-description">Born and raised in London</div></div></div>
+                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Writer & Book Publisher</div><div class="bio-description">Expert in dark themes, politics, and thriller narratives</div></div></div>
+                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Chief Executive Officer of The Kachoo</div><div class="bio-description">South Jakarta, Indonesia</div></div></div>
+                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Born 1992</div><div class="bio-description">34 years old (in 2026)</div></div></div>
+                    <div class="bio-item"><div class="bio-text"><div class="bio-title">London, England</div><div class="bio-description">Born and raised in London</div></div></div>
                 </div>
             </section>
 
             <!-- ACHIEVEMENT SECTION -->
             <section id="achievement" class="content-section">
-                <h2 class="section-title"><i class="fa-regular fa-star"></i> Achievements</h2>
+                <h2 class="section-title">Achievements</h2>
                 <div class="achievement-grid">
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div><div class="achievement-text"><div class="achievement-title">The Best Graduate Oxford</div><div class="achievement-desc">Flagship Program: Philosophy, Politics, and Economics (PPE)</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-diploma"></i></div><div class="achievement-text"><div class="achievement-title">Double Degree PPE & Computer Science</div><div class="achievement-desc">Oxford University</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-chart-line"></i></div><div class="achievement-text"><div class="achievement-title">Major MBA (Master of Business Administration)</div><div class="achievement-desc">Oxford</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-microchip"></i></div><div class="achievement-text"><div class="achievement-title">Creator of NeuroLink AI</div><div class="achievement-desc">Winner Global Quantum Code Summit</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-shield-halved"></i></div><div class="achievement-text"><div class="achievement-title">Creator of ShadowMind Protocol</div><div class="achievement-desc">Winner International Cyber Intelligence Arena</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-box"></i></div><div class="achievement-text"><div class="achievement-title">Developer of Sentinel Blackbox</div><div class="achievement-desc">Adopted by intelligence agencies worldwide</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-vault"></i></div><div class="achievement-text"><div class="achievement-title">Developer of Vaultx Protocol</div><div class="achievement-desc">Adopted by CHOBANK system</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-pen-fancy"></i></div><div class="achievement-text"><div class="achievement-title">Author of The Man Behind Delanosa and The Madman: Malvier</div><div class="achievement-desc">International bestselling thrillers, Global Fiction Awards</div></div></div>
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-building"></i></div><div class="achievement-text"><div class="achievement-title">Major Shareholder and second heir of Kafka Company</div><div class="achievement-desc"></div></div></div>
-                    <!-- PERUBAHAN: Director -> Chief Executive Officer di achievement -->
-                    <div class="achievement-item"><div class="achievement-icon"><i class="fas fa-crown"></i></div><div class="achievement-text"><div class="achievement-title">Chief Executive Officer of The Kachoo</div><div class="achievement-desc"></div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">The Best Graduate Oxford</div><div class="achievement-desc">Flagship Program: Philosophy, Politics, and Economics (PPE)</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Double Degree PPE & Computer Science</div><div class="achievement-desc">Oxford University</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Major MBA (Master of Business Administration)</div><div class="achievement-desc">Oxford University</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Creator of NeuroLink AI</div><div class="achievement-desc">Winner Global Quantum Code Summit</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Creator of ShadowMind Protocol</div><div class="achievement-desc">Winner International Cyber Intelligence Arena</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Developer of Sentinel Blackbox</div><div class="achievement-desc">Adopted by intelligence agencies worldwide</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Developer of Vaultx Protocol</div><div class="achievement-desc">Adopted by CHOBANK system</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Author of The Man Behind Delanosa and The Madman: Malvier</div><div class="achievement-desc">International bestselling thrillers, Global Fiction Awards</div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Major Shareholder and second heir of Kafka Company</div><div class="achievement-desc"></div></div></div>
+                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Chief Executive Officer of The Kachoo</div><div class="achievement-desc"></div></div></div>
                 </div>
             </section>
 
             <!-- BOOKS PUBLISHED -->
             <section id="archive" class="content-section">
-                <h2 class="section-title"><i class="fa-regular fa-book-open"></i> Books published</h2>
+                <h2 class="section-title">Books published</h2>
                 <ul class="content-list">
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">Hide and Lies : The Man Behind Delanosa</div><div class="content-item-type">Psychological Thriller Novel</div><div class="content-item-year">2025</div></div></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Anthology of Jane</div><div class="content-item-type">Dark Romance Novel</div><div class="content-item-year">2025</div></div></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Hidden Story Vol.1</div><div class="content-item-type">Psychological Thriller Novel</div><div class="content-item-year">2025</div></div></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Last Order : Rowan</div><div class="content-item-type">Psychological Thriller Novel</div><div class="content-item-year">2026</div></div></li>
+                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">Hide and Lies : The Man Behind Delanosa</div><div class="content-item-type">Psychological Thriller</div><div class="content-item-year">2025</div></div></li>
+                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Anthology of Jane</div><div class="content-item-type">Dark Romance</div><div class="content-item-year">2025</div></div></li>
+                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Hidden Story Vol.1</div><div class="content-item-type">Psychological Thriller</div><div class="content-item-year">2025</div></div></li>
+                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Last Order : Rowan</div><div class="content-item-type">Psychological Thriller</div><div class="content-item-year">2026</div></div></li>
                 </ul>
-                <h3 style="font-size:1.5rem; margin:30px 0 20px; display:flex; gap:8px;"><i class="fas fa-pen-fancy"></i> Short Stories</h3>
+                <h3 style="font-size:1.5rem; margin:30px 0 20px;">Short Stories</h3>
                 <ul class="content-list">
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Scandalous</div><div class="content-item-type">Thriller Short Story</div></div><a href="https://x.com/i/status/1997873274479681599" class="content-item-link" target="_blank">Read</a></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">Retak : Perdebatan Malam Itu</div><div class="content-item-type">Family Drama</div></div><a href="https://x.com/i/status/2000169761188278714" class="content-item-link" target="_blank">Read</a></li>
+                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Blueprint of Civil Power</div><div class="content-item-type">Politics</div></div><a href="https://x.com/i/status/2011379133083980041" class="content-item-link" target="_blank">Read</a></li>
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">High by the Beach feat Cindy Lou</div><div class="content-item-type">Toxic Relationship</div></div><a href="https://x.com/i/status/1999453298886344899" class="content-item-link" target="_blank">Read</a></li>
                     <li class="content-item"><div class="content-item-info"><div class="content-item-title">Blind Date Kok Sama Mantan?!</div><div class="content-item-type">Comedy & Romance</div></div><a href="https://x.com/i/status/1999881119840481467" class="content-item-link" target="_blank">Read</a></li>
                 </ul>
@@ -677,7 +618,7 @@
 
             <!-- STORYLINE -->
             <section id="storyline" class="content-section">
-                <h2 class="section-title"><i class="fa-regular fa-compass"></i> Storyline</h2>
+                <h2 class="section-title">Storyline</h2>
                 <div class="storyline-content">
                     <p>Gathur Delano Kafka is a reclusive thriller novelist whose works are known for their dense psychological tension and intricate mysteries. A gifted polyglot, he masters many languages such as English, German, Japanese, French, and others, using them instinctively both in daily life and in his writing. For Gathur, language is more than communication. Each language carries its own logic, emotion, and way of expressing fear. This belief shapes his novels, where foreign phrases, multilingual dialogue, and linguistic symbolism are woven into the narrative to create unease and hidden meaning. Readers admire his books for their intellectual depth, unaware that every word is rooted in fragments of his own fractured psyche.</p>
                     <p>After relentlessly pushing himself to complete his most complex thriller, Gathur becomes the victim of a severe accident that leaves him in critical condition. As his body lies motionless between life and death, his consciousness drifts instead of fading away. He opens his eyes to a world that feels hauntingly familiar, a dark city filled with distorted places, cryptic conversations, and an atmosphere thick with dread. Gradually, realization dawns on him that this world is not random. It is the very story he wrote, brought to life from his imagination, and somehow he has crossed into it at the moment his real body began to fail.</p>
@@ -688,7 +629,7 @@
 
             <!-- GALLERY -->
             <section id="gallery" class="content-section">
-                <h2 class="section-title"><i class="fa-regular fa-images"></i> Gallery</h2>
+                <h2 class="section-title">Gallery</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item" style="background-image: url('grid1.png')"></div>
                     <div class="gallery-item" style="background-image: url('grid2.png')"></div>
@@ -699,25 +640,24 @@
                 </div>
             </section>
 
-            <!-- TRIVIA -->
+            <!-- TRIVIA - TANPA ICON -->
             <section id="trivia" class="content-section">
-                <h2 class="section-title"><i class="fa-regular fa-lightbulb"></i> Trivia</h2>
-                <div class="trivia-item"><div class="trivia-question"><i class="fas fa-book"></i> Favorite Writing Genre</div><div class="trivia-answer">Thriller - especially psychological and political thrillers with dark themes</div></div>
-                <div class="trivia-item"><div class="trivia-question"><i class="fas fa-film"></i> Favorite Films & Series</div><div class="trivia-answer">Alice in Borderland, Shutter Island, The Cabin in the Woods, Attack on Titan, Jujutsu Kaisen, Monster (Anime series), and other psychological thrillers</div></div>
-                <div class="trivia-item"><div class="trivia-question"><i class="fas fa-user"></i> Personality Traits</div><div class="trivia-answer">Workaholic and smoker. Has long, large fingers and intense eyes. Tends to stare at new people who intrigue him - the gaze can be unsettling as he seems to dissect someone just by looking at them</div></div>
-                <div class="trivia-item"><div class="trivia-question"><i class="fas fa-heart"></i> Interests</div><div class="trivia-answer">Fascinated by conspiracies, enjoys analyzing human behavior, and loves exploring dark psychological themes in both reading and writing</div></div>
+                <h2 class="section-title">Trivia</h2>
+                <div class="trivia-item"><div class="trivia-question">Favorite Writing Genre</div><div class="trivia-answer">Thriller - especially psychological and political thrillers with dark themes</div></div>
+                <div class="trivia-item"><div class="trivia-question">Favorite Films & Series</div><div class="trivia-answer">Alice in Borderland, Shutter Island, The Cabin in the Woods, Attack on Titan, Jujutsu Kaisen, Monster (Anime series), and other psychological thrillers</div></div>
+                <div class="trivia-item"><div class="trivia-question">Personality Traits</div><div class="trivia-answer">Workaholic and smoker. Has long, large fingers and intense eyes. Tends to stare at new people who intrigue him - the gaze can be unsettling as he seems to dissect someone just by looking at them</div></div>
+                <div class="trivia-item"><div class="trivia-question">Interests</div><div class="trivia-answer">Fascinated by conspiracies, enjoys analyzing human behavior, and loves exploring dark psychological themes in both reading and writing</div></div>
             </section>
 
-            <!-- VOICE SECTION (HANYA TOMBOL HITAM PLAY/PAUSE) -->
+            <!-- VOICE SECTION - TANPA ICON GLOBE/LANGUAGE -->
             <section id="voice" class="content-section">
-                <h2 class="section-title"><i class="fa-regular fa-message"></i> Voice</h2>
+                <h2 class="section-title">Voice</h2>
                 
                 <div class="voice-item" data-lang="english">
-                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
+                    <!-- icon dihapus -->
                     <div class="voice-info">
                         <div class="voice-title">English voice</div>
                     </div>
-                    <!-- Tombol hitam polos tanpa ikon -->
                     <button class="voice-link play-voice-btn">Play</button>
                     <div class="voice-audio" style="display: none; width: 100%; margin-top: 16px;">
                         <audio controls preload="none" src="english.mp3">Your browser does not support audio.</audio>
@@ -725,7 +665,6 @@
                 </div>
 
                 <div class="voice-item" data-lang="japanese">
-                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
                     <div class="voice-info">
                         <div class="voice-title">日本語 (Japanese)</div>
                     </div>
@@ -736,7 +675,6 @@
                 </div>
 
                 <div class="voice-item" data-lang="german">
-                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
                     <div class="voice-info">
                         <div class="voice-title">Deutsch (German)</div>
                     </div>
@@ -747,7 +685,6 @@
                 </div>
 
                 <div class="voice-item" data-lang="french">
-                    <div class="voice-icon"><i class="fa-solid fa-language"></i></div>
                     <div class="voice-info">
                         <div class="voice-title">Français (French)</div>
                     </div>
@@ -758,18 +695,17 @@
                 </div>
             </section>
 
-            <!-- MUSIC FAVORITES -->
+            <!-- MUSIC FAVORITES - TANPA ICON SPOTIFY -->
             <section id="music" class="content-section">
-                <h2 class="section-title"><i class="fa-regular fa-music"></i> Favorite Music</h2>
-                <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Under the Influence</div><div class="music-artist">Chris Brown</div></div><a href="https://open.spotify.com/track/5IgjP7X4th6nMNDh4akUHb?si=19594b3665574834" class="music-link" target="_blank">Listen</a></div>
-                <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Swimming Pools</div><div class="music-artist">Kendrick Lamar (Cover by Lloyd)</div></div><a href="https://open.spotify.com/track/0qBh4HDd6UrJ7jxzPojRYJ?si=db8287e03cdd4998" class="music-link" target="_blank">Listen</a></div>
-                <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Timeless</div><div class="music-artist">The Weeknd feat Playboi Carti</div></div><a href="https://open.spotify.com/track/0FIDCNYYjNvPVimz5icugS?si=e414e30384584e49" class="music-link" target="_blank">Listen</a></div>
-                <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Reflections</div><div class="music-artist">The Neighbourhood</div></div><a href="https://open.spotify.com/track/2xql0pid3EUwW38AsywxhV?si=fab1a7462cce4fe9" class="music-link" target="_blank">Listen</a></div>
+                <h2 class="section-title">Favorite Music</h2>
+                <div class="music-item"><div class="music-info"><div class="music-title">Under the Influence</div><div class="music-artist">Chris Brown</div></div><a href="https://open.spotify.com/track/5IgjP7X4th6nMNDh4akUHb?si=19594b3665574834" class="music-link" target="_blank">Listen</a></div>
+                <div class="music-item"><div class="music-info"><div class="music-title">Swimming Pools</div><div class="music-artist">Kendrick Lamar (Cover by Lloyd)</div></div><a href="https://open.spotify.com/track/0qBh4HDd6UrJ7jxzPojRYJ?si=db8287e03cdd4998" class="music-link" target="_blank">Listen</a></div>
+                <div class="music-item"><div class="music-info"><div class="music-title">Timeless</div><div class="music-artist">The Weeknd feat Playboi Carti</div></div><a href="https://open.spotify.com/track/0FIDCNYYjNvPVimz5icugS?si=e414e30384584e49" class="music-link" target="_blank">Listen</a></div>
+                <div class="music-item"><div class="music-info"><div class="music-title">Reflections</div><div class="music-artist">The Neighbourhood</div></div><a href="https://open.spotify.com/track/2xql0pid3EUwW38AsywxhV?si=fab1a7462cce4fe9" class="music-link" target="_blank">Listen</a></div>
             </section>
 
             <footer>
                 <p>© 2026 Gathur Delano Kafka.</p>
-                <!-- PERUBAHAN: footer juga Director -> Chief Executive Officer -->
                 <p style="margin-top:10px; font-size:14px; color:#888;">Writer & Publisher | Chief Executive Officer of The Kachoo</p>
             </footer>
         </div>
@@ -777,7 +713,7 @@
 
     <script>
         (function() {
-            const navBtns = document.querySelectorAll('.nav-btn:not(.alterspring-nav)'); // alterspring tidak ikut toggle
+            const navBtns = document.querySelectorAll('.nav-btn:not(.alterspring-nav)');
             const sections = document.querySelectorAll('.content-section');
 
             function activateSection(targetId) {
@@ -803,16 +739,14 @@
                 });
             });
 
-            // default aktif profile
             activateSection('profile');
 
-            // touch feedback
             document.querySelectorAll('.nav-btn, .music-link, .content-item-link, .voice-link').forEach(el => {
                 el.addEventListener('touchstart', function() { this.style.transform = 'scale(0.96)'; });
                 el.addEventListener('touchend', function() { this.style.transform = ''; });
             });
 
-            // VOICE section: play button hitam munculkan audio player, teks berubah Pause
+            // VOICE section: play button hitam
             document.querySelectorAll('.play-voice-btn').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -821,23 +755,19 @@
                     const audioDiv = voiceItem.querySelector('.voice-audio');
                     if (!audioDiv) return;
                     
-                    // sembunyikan yang lain, tutup semua audio di voice section
                     document.querySelectorAll('#voice .voice-audio').forEach(ad => {
                         if (ad !== audioDiv) {
                             ad.style.display = 'none';
                             const player = ad.querySelector('audio');
                             if (player) player.pause();
-                            // kembalikan teks tombol ke Play untuk item lain
                             const otherBtn = ad.closest('.voice-item')?.querySelector('.play-voice-btn');
                             if (otherBtn) otherBtn.textContent = 'Play';
                         }
                     });
 
-                    // toggle audio div
                     if (audioDiv.style.display === 'none' || audioDiv.style.display === '') {
                         audioDiv.style.display = 'block';
-                        this.textContent = 'Pause';   // tanpa ikon, teks saja
-                        // auto play? biar user klik play di control (tidak auto)
+                        this.textContent = 'Pause';
                     } else {
                         audioDiv.style.display = 'none';
                         this.textContent = 'Play';
@@ -849,4 +779,4 @@
         })();
     </script>
 </body>
-    </html>
+                    </html>
