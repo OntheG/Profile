@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Gathur Delano Kafka · refined</title>
+    <title>Gathur Delano Kafka · with Secreto nav</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ----- base & reset ----- */
@@ -195,6 +195,28 @@
 
         .nav-btn:active {
             transform: scale(0.96);
+        }
+
+        /* secreto button spesial - beda warna */
+        .nav-btn.secreto-nav {
+            background: #e8e8e8;
+            border-color: #999;
+            color: #111;
+            font-weight: 600;
+        }
+        
+        .nav-btn.secreto-nav i {
+            color: #d4a373;
+        }
+        
+        .nav-btn.secreto-nav:hover {
+            background: #d4a373;
+            border-color: #b5835a;
+            color: white;
+        }
+        
+        .nav-btn.secreto-nav:hover i {
+            color: white;
         }
 
         /* ----- content sections (fade) ----- */
@@ -392,44 +414,6 @@
             color: #111;
         }
 
-        /* ----- external secreto button (now used as inline after favorites) ----- */
-        .secreto-inline {
-            margin-top: 40px;
-            text-align: center;
-            border-top: 2px dashed #ddd;
-            padding-top: 30px;
-        }
-
-        .secreto-btn {
-            background: #1a1a1a;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            padding: 18px 42px;
-            border-radius: 60px;
-            font-size: 1.4rem;
-            font-weight: 620;
-            border: 2px solid #111;
-            transition: all 0.25s;
-            width: 100%;
-            max-width: 440px;
-            margin: 0 auto;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-        }
-
-        .secreto-btn i {
-            font-size: 2rem;
-        }
-
-        .secreto-btn:hover {
-            background: white;
-            color: #111;
-            transform: scale(1.02);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.1);
-        }
-
         /* storyline, gallery, trivia, music */
         .storyline-content {
             background: #fafafa;
@@ -564,7 +548,6 @@
             .section-title { font-size: 1.6rem; }
             .content-section { padding: 22px 18px; }
             .nav-btn { padding: 12px 8px; font-size: 0.88rem; min-width: 85px; }
-            .secreto-btn { font-size: 1.2rem; padding: 16px 28px; }
             .content-item-link { white-space: normal; }
         }
     </style>
@@ -584,7 +567,7 @@
     </header>
 
     <div class="main-container">
-        <!-- SIDEBAR NAVIGATION (7 buttons) -->
+        <!-- SIDEBAR NAVIGATION (8 buttons - including SECRETO) -->
         <div class="sidebar">
             <div class="navigation-buttons">
                 <a href="#" class="nav-btn active" data-target="profile"><i class="fa-regular fa-user" style="margin-right: 8px;"></i> Profile</a>
@@ -594,6 +577,8 @@
                 <a href="#" class="nav-btn" data-target="gallery"><i class="fa-regular fa-images" style="margin-right: 8px;"></i> Gallery</a>
                 <a href="#" class="nav-btn" data-target="trivia"><i class="fa-regular fa-lightbulb" style="margin-right: 8px;"></i> Trivia</a>
                 <a href="#" class="nav-btn" data-target="music"><i class="fa-regular fa-music" style="margin-right: 8px;"></i> Favorites</a>
+                <!-- SECRETO BUTTON - sebagai tombol navigasi ke link eksternal -->
+                <a href="https://secreto.com/gaxlak" target="_blank" class="nav-btn secreto-nav"><i class="fas fa-lock" style="margin-right: 8px;"></i> Secreto message <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 4px;"></i></a>
             </div>
         </div>
 
@@ -608,10 +593,9 @@
                     <div class="bio-item"><div class="bio-icon"><i class="fas fa-birthday-cake"></i></div><div class="bio-text"><div class="bio-title">Born 1992</div><div class="bio-description">34 years old (in 2026)</div></div></div>
                     <div class="bio-item"><div class="bio-icon"><i class="fas fa-map-marker-alt"></i></div><div class="bio-text"><div class="bio-title">London, England</div><div class="bio-description">Born and raised in London</div></div></div>
                 </div>
-                <!-- Secreto button not repeated here, only after Favorites -->
             </section>
 
-            <!-- ACHIEVEMENT SECTION (10 items, no numbers, first line changed to "The Best Graduate Oxford") -->
+            <!-- ACHIEVEMENT SECTION (10 items, no numbers, first line "The Best Graduate Oxford") -->
             <section id="achievement" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-star"></i> Achievements</h2>
                 <div class="achievement-grid">
@@ -679,18 +663,13 @@
                 <div class="trivia-item"><div class="trivia-question"><i class="fas fa-heart"></i> Interests</div><div class="trivia-answer">Fascinated by conspiracies, enjoys analyzing human behavior, and loves exploring dark psychological themes in both reading and writing</div></div>
             </section>
 
-            <!-- MUSIC FAVORITES (with secreto button AFTER the last music item, not below the whole section) -->
+            <!-- MUSIC FAVORITES -->
             <section id="music" class="content-section">
                 <h2 class="section-title"><i class="fa-regular fa-music"></i> Favorite Music</h2>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Under the Influence</div><div class="music-artist">Chris Brown</div></div><a href="https://open.spotify.com/track/5IgjP7X4th6nMNDh4akUHb?si=19594b3665574834" class="music-link" target="_blank">Listen</a></div>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Swimming Pools</div><div class="music-artist">Kendrick Lamar (Cover by Lloyd)</div></div><a href="https://open.spotify.com/track/0qBh4HDd6UrJ7jxzPojRYJ?si=db8287e03cdd4998" class="music-link" target="_blank">Listen</a></div>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Timeless</div><div class="music-artist">The Weeknd feat Playboi Carti</div></div><a href="https://open.spotify.com/track/0FIDCNYYjNvPVimz5icugS?si=e414e30384584e49" class="music-link" target="_blank">Listen</a></div>
                 <div class="music-item"><div class="music-icon"><i class="fab fa-spotify"></i></div><div class="music-info"><div class="music-title">Reflections</div><div class="music-artist">The Neighbourhood</div></div><a href="https://open.spotify.com/track/2xql0pid3EUwW38AsywxhV?si=fab1a7462cce4fe9" class="music-link" target="_blank">Listen</a></div>
-
-                <!-- SECRETO BUTTON : tepat setelah daftar favorite (masih di dalam section music, setelah item keempat) -->
-                <div class="secreto-inline">
-                    <a href="https://secreto.com/gaxlak" target="_blank" class="secreto-btn"><i class="fas fa-lock"></i> Secreto message <i class="fas fa-arrow-up-right-from-square"></i></a>
-                </div>
             </section>
 
             <footer>
@@ -702,7 +681,7 @@
 
     <script>
         (function() {
-            const navBtns = document.querySelectorAll('.nav-btn');
+            const navBtns = document.querySelectorAll('.nav-btn:not(.secreto-nav)'); // secreto nav tidak ikut toggle
             const sections = document.querySelectorAll('.content-section');
 
             function activateSection(targetId) {
@@ -728,9 +707,10 @@
                 });
             });
 
+            // secreto button tetap sebagai link eksternal, tidak terpengaruh nav
             activateSection('profile');
 
-            document.querySelectorAll('.nav-btn, .music-link, .content-item-link, .secreto-btn').forEach(el => {
+            document.querySelectorAll('.nav-btn, .music-link, .content-item-link').forEach(el => {
                 el.addEventListener('touchstart', function() { this.style.transform = 'scale(0.96)'; });
                 el.addEventListener('touchend', function() { this.style.transform = ''; });
             });
