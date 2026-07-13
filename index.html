@@ -312,71 +312,6 @@
             color: #505050;
         }
 
-        /* books published */
-        .content-list {
-            list-style: none;
-        }
-
-        .content-item {
-            background: #fafafa;
-            border-radius: 22px;
-            padding: 22px 24px;
-            margin-bottom: 18px;
-            border: 1px solid #ececec;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.2s;
-        }
-
-        .content-item:hover {
-            background: #f3f3f3;
-            transform: translateX(5px);
-        }
-
-        .content-item-info {
-            flex: 2 1 240px;
-        }
-
-        .content-item-title {
-            font-size: 1.3rem;
-            font-weight: 670;
-            margin-bottom: 5px;
-        }
-
-        .content-item-type {
-            color: #444;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .content-item-year {
-            font-weight: 500;
-            color: #666;
-            margin-top: 8px;
-        }
-
-        .content-item-link {
-            background: #111;
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 550;
-            transition: 0.2s;
-            white-space: nowrap;
-            border: 1px solid #111;
-            margin-top: 8px;
-            display: inline-block;
-        }
-
-        .content-item-link:hover {
-            background: white;
-            color: #111;
-        }
-
         /* storyline */
         .storyline-content {
             background: #fafafa;
@@ -418,6 +353,23 @@
         .gallery-item:hover {
             transform: scale(1.02);
             box-shadow: 0 14px 24px rgba(0,0,0,0.08);
+        }
+
+        .gallery-item.single {
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+
+        .gallery-section-title {
+            font-size: 1.4rem;
+            font-weight: 650;
+            margin: 30px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .gallery-section-title:first-of-type {
+            margin-top: 0;
         }
 
         /* trivia, music, voice */
@@ -530,7 +482,6 @@
             .profile-photo { width: 120px; height: 120px; }
             .section-title { font-size: 1.6rem; }
             .content-section { padding: 22px 18px; }
-            .content-item-link { white-space: normal; }
         }
 
         img {
@@ -558,7 +509,6 @@
             <div class="navigation-buttons">
                 <a href="#" class="nav-btn active" data-target="profile">Profile</a>
                 <a href="#" class="nav-btn" data-target="achievement">Achievements</a>
-                <a href="#" class="nav-btn" data-target="archive">Books published</a>
                 <a href="#" class="nav-btn" data-target="storyline">Storyline</a>
                 <a href="#" class="nav-btn" data-target="gallery">Gallery</a>
                 <a href="#" class="nav-btn" data-target="trivia">Trivia</a>
@@ -574,7 +524,6 @@
             <section id="profile" class="content-section active">
                 <h2 class="section-title">About me</h2>
                 <div class="bio-details">
-                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Writer & Book Publisher</div><div class="bio-description">Expert in dark themes, politics, and thriller narratives</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">Chief Executive Officer of The Kachoo</div><div class="bio-description">South Jakarta, Indonesia</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">Born 1992</div><div class="bio-description">34 years old (in 2026)</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">London, England</div><div class="bio-description">Born and raised in London</div></div></div>
@@ -592,44 +541,43 @@
                     <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Creator of ShadowMind Protocol</div><div class="achievement-desc">Winner International Cyber Intelligence Arena</div></div></div>
                     <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Developer of Sentinel Blackbox</div><div class="achievement-desc">Adopted by intelligence agencies worldwide</div></div></div>
                     <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Developer of Vaultx Protocol</div><div class="achievement-desc">Adopted by CHOBANK system</div></div></div>
-                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Author of The Man Behind Delanosa and The Madman: Malvier</div><div class="achievement-desc">International bestselling thrillers, Global Fiction Awards</div></div></div>
-                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Major Shareholder and second heir of Kafka Company</div><div class="achievement-desc"></div></div></div>
-                    <div class="achievement-item"><div class="achievement-text"><div class="achievement-title">Chief Executive Officer of The Kachoo</div><div class="achievement-desc"></div></div></div>
                 </div>
-            </section>
-
-            <!-- BOOKS PUBLISHED -->
-            <section id="archive" class="content-section">
-                <h2 class="section-title">Books published</h2>
-                <ul class="content-list">
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">Hide and Lies : The Man Behind Delanosa</div><div class="content-item-type">Psychological Thriller</div><div class="content-item-year">2025</div></div></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Anthology of Jane</div><div class="content-item-type">Dark Romance</div><div class="content-item-year">2025</div></div></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Hidden Story Vol.1</div><div class="content-item-type">Psychological Thriller</div><div class="content-item-year">2025</div></div></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Last Order : Rowan</div><div class="content-item-type">Psychological Thriller</div><div class="content-item-year">2026</div></div></li>
-                </ul>
-                <h3 style="font-size:1.5rem; margin:30px 0 20px;">Short Stories</h3>
-                <ul class="content-list">
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Scandalous</div><div class="content-item-type">Thriller Short Story</div></div><a href="https://x.com/i/status/1997873274479681599" class="content-item-link" target="_blank">Read</a></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">The Blueprint of Civil Power</div><div class="content-item-type">Politics</div></div><a href="https://x.com/i/status/2011379133083980041" class="content-item-link" target="_blank">Read</a></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">High by the Beach feat Cindy Lou</div><div class="content-item-type">Toxic Relationship</div></div><a href="https://x.com/i/status/1999453298886344899" class="content-item-link" target="_blank">Read</a></li>
-                    <li class="content-item"><div class="content-item-info"><div class="content-item-title">Blind Date Kok Sama Mantan?!</div><div class="content-item-type">Comedy & Romance</div></div><a href="https://x.com/i/status/1999881119840481467" class="content-item-link" target="_blank">Read</a></li>
-                </ul>
             </section>
 
             <!-- STORYLINE -->
             <section id="storyline" class="content-section">
                 <h2 class="section-title">Storyline</h2>
                 <div class="storyline-content">
-                    <p>Gathur Delano Kafka is a reclusive thriller novelist whose works are known for their dense psychological tension and intricate mysteries. A gifted polyglot, he masters many languages such as English, German, Japanese, French, and others, using them instinctively both in daily life and in his writing. For Gathur, language is more than communication. Each language carries its own logic, emotion, and way of expressing fear. This belief shapes his novels, where foreign phrases, multilingual dialogue, and linguistic symbolism are woven into the narrative to create unease and hidden meaning. Readers admire his books for their intellectual depth, unaware that every word is rooted in fragments of his own fractured psyche.</p>
-                    <p>After relentlessly pushing himself to complete his most complex thriller, Gathur becomes the victim of a severe accident that leaves him in critical condition. As his body lies motionless between life and death, his consciousness drifts instead of fading away. He opens his eyes to a world that feels hauntingly familiar, a dark city filled with distorted places, cryptic conversations, and an atmosphere thick with dread. Gradually, realization dawns on him that this world is not random. It is the very story he wrote, brought to life from his imagination, and somehow he has crossed into it at the moment his real body began to fail.</p>
-                    <p>Inside the story, Gathur is stripped of his role as an author and forced to exist as part of the plot. The characters he once created now possess their own will, some treating him as a myth, others sensing him as a threat. The rules of the thriller govern everything, where secrets demand to be uncovered and mistakes are punished without mercy. His ability to understand multiple languages becomes his greatest weapon. Through scattered texts, coded warnings, and conversations that shift from one language to another, Gathur uncovers hidden layers of the narrative that only he can perceive. Each language reveals a different truth, guiding him deeper into the heart of the story and closer to the fears he tried to conceal through fiction.</p>
-                    <p>As reality and fiction blur, Gathur is forced to confront the darkness embedded within his own writing. The story reflects his regrets, obsessions, and moral dilemmas, turning them into tangible threats. To escape, he must do the impossible by completing the story from within, not by writing words, but by making irreversible choices that shape its ending. Whether he will awaken from his critical state or remain forever imprisoned inside the thriller he created is uncertain, as the story continues to close in around him, demanding a conclusion that only he can deliver.</p>
+                    <p>Gathur Delano Kafka, more widely known by his surname Kafka, is a successful businessman and entrepreneur active in the technology and digital media industries. He is the son of former British Prime Minister Edward Kafka. He was born in London on March 27, 1992, and is officially recognized as the second child of the Kafka family.</p>
+
+                    <p>Within the Kafka family lineage, Gathur is actually the result of an affair between Edward Kafka and an unidentified woman. His biological mother passed away at the time of his birth. To conceal this and protect Edward Kafka's image as he pursued the position of Prime Minister, Edward officially brought Gathur into the Kafka family as the second child within his political marriage.</p>
+
+                    <p>Gathur Delano Kafka was raised in London through homeschooling and was directly supervised by his father. Initially, Gathur was prepared as a political instrument to eventually succeed Edward. As a result, Edward placed greater pressure on Gathur in terms of education, ethics, and business strategy compared to his first son, Theodore Kafka.</p>
+
+                    <p>Gathur had an awkward relationship with Theodore, largely because Theodore was considered overly dependent on him and fearful of their father. Meanwhile, from a young age, Gathur consistently sought ways to distance himself from the Kafka family.</p>
+
+                    <p>During his teenage years, he participated in various academic competitions under his father's orders. However, Gathur had little interest in academics and was far more drawn to technology. It was during this time that he met Louis Anderson, his classmate, who aspired to become an Interpol officer but was hindered by financial limitations. Gathur eventually collaborated with Louis to pursue their respective ambitions.</p>
+
+                    <p>During his university years, Gathur chose to study Philosophy, Politics, and Economics (PPE) at Oxford. When Vaultx Inc hosted the prestigious Global Quantum Code Summit, Gathur participated by developing NeuroLink AI, now known as N-Link AI. This marked his entry into the tech world, where he won the competition, received a substantial prize, and had his program adopted as a primary project by Vaultx Inc. His work captured the attention of Sarah and Debora, the founders of Vaultx Inc, who offered him significant financial incentives solely for the N-Link AI project.</p>
+
+                    <p>Following his victory, Gathur successfully freed himself from his father's pressure to enter politics. He pursued a double degree in PPE and Computer Science, followed by an MBA at Oxford. After graduating, he was directly recruited by Vaultx Inc, further immersing himself in the technology and business landscape in the United States. After N-Link AI, he went on to develop the Shadowmind Protocol, which won at the International Cyber Intelligence Arena competition.</p>
+
+                    <p>His reputation continued to rise, eventually attracting the attention of the United States government. Together with Vaultx, he developed Sentinel Blackbox, which was later adopted by intelligence agencies worldwide to enhance security systems. Sentinel Blackbox has also been implemented in several aircraft and railway systems.</p>
+
+                    <p>In addition to his technological ventures, Gathur has participated in sculpture and painting, investing in museums in South Korea. He also invested in Megatro Hospital, which contributed positively to his public image.</p>
+
+                    <p>In Indonesia, during the COVID-19 quarantine period, Gathur played a significant role in advancing technology in the education sector. He contributed to the development of Albrata Elite International School in Jakarta, created platforms and features to support education during quarantine, and organized online seminars to assist in the transition to remote learning.</p>
+
+                    <p>Gathur further expanded his business ventures in Indonesia by establishing a digital media and news company called The Kachoo. The company gained considerable attention upon its official launch and achieved strong engagement, reinforcing Gathur's reputation for building a positive corporate image.</p>
                 </div>
             </section>
 
             <!-- GALLERY -->
             <section id="gallery" class="content-section">
                 <h2 class="section-title">Gallery</h2>
+                
+                <!-- Gathur D. Kafka -->
+                <h3 class="gallery-section-title">Profile</h3>
                 <div class="gallery-grid">
                     <div class="gallery-item" style="background-image: url('grid1.png')"></div>
                     <div class="gallery-item" style="background-image: url('grid2.png')"></div>
@@ -637,6 +585,26 @@
                     <div class="gallery-item" style="background-image: url('grid4.png')"></div>
                     <div class="gallery-item" style="background-image: url('grid5.png')"></div>
                     <div class="gallery-item" style="background-image: url('grid6.png')"></div>
+                </div>
+
+                <!-- Social Media -->
+                <h3 class="gallery-section-title">Social Media</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item single" style="background-image: url('jackdaw.png'); background-size: contain; background-repeat: no-repeat; background-color: #f5f5f5;"></div>
+                </div>
+
+                <!-- Family - 3 grid -->
+                <h3 class="gallery-section-title">Family</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="background-image: url('family1.png')"></div>
+                </div>
+
+                <!-- House - 3 grid -->
+                <h3 class="gallery-section-title">House</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="background-image: url('house1.png')"></div>
+                    <div class="gallery-item" style="background-image: url('house2.png')"></div>
+                    <div class="gallery-item" style="background-image: url('house3.png')"></div>
                 </div>
             </section>
 
@@ -654,7 +622,6 @@
                 <h2 class="section-title">Voice</h2>
                 
                 <div class="voice-item" data-lang="english">
-                    <!-- icon dihapus -->
                     <div class="voice-info">
                         <div class="voice-title">English voice</div>
                     </div>
@@ -741,7 +708,7 @@
 
             activateSection('profile');
 
-            document.querySelectorAll('.nav-btn, .music-link, .content-item-link, .voice-link').forEach(el => {
+            document.querySelectorAll('.nav-btn, .music-link, .voice-link').forEach(el => {
                 el.addEventListener('touchstart', function() { this.style.transform = 'scale(0.96)'; });
                 el.addEventListener('touchend', function() { this.style.transform = ''; });
             });
@@ -779,4 +746,4 @@
         })();
     </script>
 </body>
-                    </html>
+</html>
