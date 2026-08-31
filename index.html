@@ -6,7 +6,6 @@
     <title>Gathur Delano Kafka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ----- base & reset ----- */
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +34,6 @@
             color: inherit;
         }
 
-        /* ----- header card ----- */
         header {
             background: #ffffff;
             border: 1px solid #e5e5e5;
@@ -84,7 +82,6 @@
             margin-bottom: 8px;
         }
 
-        /* ----- desktop layout ----- */
         @media (min-width: 860px) {
             body {
                 padding: 32px 40px;
@@ -122,7 +119,6 @@
             }
         }
 
-        /* ----- navigation buttons ----- */
         .navigation-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -190,7 +186,6 @@
             color: white;
         }
 
-        /* ----- content sections ----- */
         .content-section {
             background: #ffffff;
             border: 1px solid #e6e6e6;
@@ -228,7 +223,6 @@
             border-bottom: 2px solid #ececec;
         }
 
-        /* ----- achievement grid ----- */
         .achievement-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -267,7 +261,6 @@
             font-size: 0.94rem;
         }
 
-        /* bio details */
         .bio-details {
             display: grid;
             grid-template-columns: 1fr;
@@ -291,7 +284,51 @@
             color: #505050;
         }
 
-        /* voice di profile */
+        /* family section */
+        .family-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .family-member {
+            background: #fafafa;
+            border: 1px solid #efefef;
+            border-radius: 20px;
+            padding: 16px 18px;
+        }
+
+        .family-member .role {
+            font-weight: 650;
+            font-size: 0.9rem;
+            color: #777;
+            letter-spacing: 0.3px;
+            margin-bottom: 4px;
+        }
+
+        .family-member .name {
+            font-weight: 680;
+            font-size: 1.1rem;
+        }
+
+        .family-member .note {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 4px;
+            padding-left: 6px;
+            border-left: 3px solid #ccc;
+        }
+
+        .family-member .note i {
+            font-style: normal;
+        }
+
+        @media (max-width: 600px) {
+            .family-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .voice-profile {
             background: #fafafa;
             border: 1px solid #efefef;
@@ -333,7 +370,6 @@
             border-radius: 30px;
         }
 
-        /* gallery - ID & Passport landscape (full width, no grid) */
         .gallery-item-landscape {
             width: 100%;
             background-color: #eaeaea;
@@ -352,7 +388,6 @@
             box-shadow: 0 14px 24px rgba(0,0,0,0.08);
         }
 
-        /* house item dengan label di bawah */
         .house-item {
             display: flex;
             flex-direction: column;
@@ -412,7 +447,6 @@
             margin-top: 0;
         }
 
-        /* trivia */
         .trivia-item {
             background: #f9f9f9;
             border-radius: 24px;
@@ -480,6 +514,7 @@
         <div class="sidebar">
             <div class="navigation-buttons">
                 <a href="#" class="nav-btn active" data-target="profile">Profile</a>
+                <a href="#" class="nav-btn" data-target="family">Family</a>
                 <a href="#" class="nav-btn" data-target="achievement">Achievements</a>
                 <a href="#" class="nav-btn" data-target="storyline">Storyline</a>
                 <a href="#" class="nav-btn" data-target="gallery">Gallery</a>
@@ -493,16 +528,15 @@
             <section id="profile" class="content-section active">
                 <h2 class="section-title">About me</h2>
                 <div class="bio-details">
-                    <div class="bio-item"><div class="bio-text"><div class="bio-title">First Name :</div><div class="bio-description">Gathur</div></div></div>
-                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Middle Name :</div><div class="bio-description">Delano</div></div></div>
+                    <!-- Full name, surname only -->
+                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Full Name :</div><div class="bio-description">Gathur Delano Kafka</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">Surname / Family Name :</div><div class="bio-description">Kafka</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">Date of Birth :</div><div class="bio-description">March 27, 1992</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">Place of Birth :</div><div class="bio-description">London, England</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">Address :</div><div class="bio-description">14 Hamilton Terrace, St John's Wood, London, NW8 9UG</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">Blood Type :</div><div class="bio-description">A+</div></div></div>
                     <div class="bio-item"><div class="bio-text"><div class="bio-title">MBTI :</div><div class="bio-description">INTJ-T</div></div></div>
-                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Profession :</div><div class="bio-description">- Chief Technology Officer (CTO) of The Vaultx. New York, USA<br>- Chief Executive Officer (CEO) of The Kachoo. South Jakarta, Indonesia</br></div></div></div>
-                    <!-- VOICE di profile (paling bawah) -->
+                    <div class="bio-item"><div class="bio-text"><div class="bio-title">Profession :</div><div class="bio-description">- Chief Technology Officer (CTO) of The Vaultx. New York, USA<br>- Chief Executive Officer (CEO) of The Kachoo. South Jakarta, Indonesia</div></div></div>
                     <div class="voice-profile">
                         <div>
                             <div class="voice-title">Voice</div>
@@ -515,7 +549,27 @@
                 </div>
             </section>
 
-            <!-- ACHIEVEMENTS -->
+            <!-- FAMILY (baru) -->
+            <section id="family" class="content-section">
+                <h2 class="section-title">The Kafka Family</h2>
+                <div class="family-grid">
+                    <div class="family-member"><span class="role">Grandfather</span><div class="name">Šimon Vojtěch Kafka</div></div>
+                    <div class="family-member"><span class="role">Grandmother</span><div class="name">- (unknown)</div></div>
+                    <div class="family-member"><span class="role">Father</span><div class="name">Edward Kafka</div><div class="note"><i>* Formerly known as Eduard Vojtěch Kafka</i></div></div>
+                    <div class="family-member"><span class="role">Mother (Legal)</span><div class="name">Matilda Kafka</div><div class="note"><i>* Known as Matilda or Ms. Howard</i></div></div>
+                    <div class="family-member"><span class="role">Mother (Biological)</span><div class="name">- (unknown)</div></div>
+                    <div class="family-member"><span class="role">First Child</span><div class="name">Theodore Kafka</div><div class="note"><i>* Known as Theo or Matteo</i></div></div>
+                    <div class="family-member"><span class="role">Second Child</span><div class="name">Gathur Delano Kafka</div><div class="note"><i>* Known as Kafka, formerly known as Günther Vojtěch Kafka or Gustav</i></div></div>
+                    <div class="family-member"><span class="role">Uncle</span><div class="name">Gilbert Kafka</div><div class="note"><i>Formerly known as Gilbert Vojtěch Kafka</i></div></div>
+                    <div class="family-member"><span class="role">Uncle</span><div class="name">Mautier Kafka</div><div class="note"><i>Formerly known as Mautier Vojtěch Kafka</i></div></div>
+                    <div class="family-member"><span class="role">Aunt</span><div class="name">Sofie Bentley</div><div class="note"><i>Formerly known as Sofie Vojtěch Kafka</i></div></div>
+                    <div class="family-member"><span class="role">Cousin</span><div class="name">Bohdanko Kafka</div><div class="note"><i>A son of Gilbert Kafka, known as Danko</i></div></div>
+                    <div class="family-member"><span class="role">Cousin</span><div class="name">Alois Kafka</div><div class="note"><i>A son of Mautier Kafka, known as Louis</i></div></div>
+                    <div class="family-member"><span class="role">Cousin</span><div class="name">Sophia Bentley</div><div class="note"><i>A daughter of Sofia Bentley</i></div></div>
+                </div>
+            </section>
+
+            <!-- ACHIEVEMENTS (typo fixed: Archivements → Achievements) -->
             <section id="achievement" class="content-section">
                 <h2 class="section-title">Achievements</h2>
                 <div class="achievement-grid">
@@ -529,7 +583,7 @@
                 </div>
             </section>
 
-            <!-- STORYLINE - pindah ke Storyline.html -->
+            <!-- STORYLINE -->
             <section id="storyline" class="content-section">
                 <h2 class="section-title">Storyline</h2>
                 <div style="text-align:center; padding:40px 20px;">
@@ -588,7 +642,6 @@
             const sections = document.querySelectorAll('.content-section');
 
             function activateSection(targetId) {
-                // jika storyline, langsung redirect ke Storyline.html
                 if (targetId === 'storyline') {
                     window.location.href = 'Storyline.html';
                     return;
@@ -616,10 +669,10 @@
                 });
             });
 
-            // default aktif profile
+            // default active profile
             activateSection('profile');
 
-            // voice di profile
+            // voice button
             document.querySelector('.play-voice-btn-profile')?.addEventListener('click', function(e) {
                 e.preventDefault();
                 const voiceProfile = this.closest('.voice-profile');
@@ -646,4 +699,4 @@
         })();
     </script>
 </body>
-            </html>
+                                                                                                                                                                        </html>
