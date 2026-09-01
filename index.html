@@ -495,6 +495,16 @@
             color: #5a5a5a;
         }
 
+        .footer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 8px;
+            border: 2px solid #e2e2e2;
+        }
+
         @media (max-width: 600px) {
             header { padding: 24px 16px; }
             .profile-name { font-size: 1.8rem; }
@@ -506,6 +516,17 @@
             }
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .footer-avatar {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .footer-avatar {
+                width: 36px;
+                height: 36px;
             }
         }
 
@@ -645,8 +666,8 @@
             </section>
 
             <footer>
-                <p>© 2026 Gathur Delano Kafka.</p>
-                <p style="margin-top:10px; font-size:14px; color:#888;">Written by Arde</p>
+                <img src="Arde.png" alt="Arde" class="footer-avatar">
+                <p style="font-size:14px; color:#888;">Written by Arde</p>
             </footer>
         </div>
     </div>
